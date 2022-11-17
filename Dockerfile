@@ -3,11 +3,12 @@ FROM alpine:latest
 LABEL maintainer="Rui Marinho <rui@uphold.com> (@ruimarinho)"
 
 ENV PGBADGER_DATA=/data
-ENV PGBADGER_VERSION=11.1
+ENV PGBADGER_VERSION=12.0
 ENV PGBADGER_PREFIX=/opt/pgbadger-${PGBADGER_VERSION}
 ENV PATH=${PGBADGER_PREFIX}:$PATH
 
 RUN apk --no-cache add coreutils \
+    gzip \
     openssl \
     perl \
   && mkdir -p /data /opt \
